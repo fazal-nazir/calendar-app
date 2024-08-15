@@ -1,0 +1,105 @@
+.calendar-container {
+  display: flex;
+  max-width: 1000px;
+  // margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.small-calendar {
+  flex: 0 0 250px;
+  margin-right: 16px;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+mat-card-content {
+  padding: 2px 4px 2px 4px !important;
+}
+
+.appointment-tooltip {
+  white-space: pre-line;
+  font-size: 0.8rem;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+  .day-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 0;
+    border-bottom: 2px solid #eee;
+  }
+
+  .day-cell {
+    position: relative;
+    min-height: 125px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    padding: 5px;
+    overflow: auto;
+    min-width: 170px;
+  }
+
+  .appointment-card {
+    background-color: #8cc9ed;
+    border: 1px solid #ddd;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    cursor: pointer;
+
+    .appointment-title {
+      font-weight: bold;
+      font-size: 0.85rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .appointment-date {
+      color: #666;
+      font-size: 0.75rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    mat-icon {
+      font-size: 16px;
+      color: #f44336;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .appointment-card {
+    font-size: 0.7rem;
+    padding: 2px;
+  }
+
+  .day-cell {
+    min-height: 60px;
+  }
+}
